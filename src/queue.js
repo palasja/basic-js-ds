@@ -45,17 +45,14 @@ const { ListNode } = require("../extensions/list-node.js");
 //   }
 // }
 
-class Queue extends ListNode {
-  constructor() {
-    super();
-  }
+class Queue {
   list = {};
   getUnderlyingList() {
     return this.list;
   }
   s;
   enqueue(value) {
-    const obj = { value: value, next: null };
+    const obj = new ListNode(value);
     if ("value" in this.list) {
       let tmp = this.list;
       while (tmp.next != null) {
